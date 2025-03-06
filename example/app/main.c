@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "mat.h"
+#include "add.h"
+
 
 
 /**
@@ -20,10 +22,12 @@
  */
 int main(void) 
 {
-    printf("Hello, World!\n");
+    printf("[main]:Hello, World!\n");
+
+    printf("[main]:8+3=%d!\n",add(8,3));
 
 
-    int decimalNumber = 10;
+    int decimalNumber = 8;
     printBinaryFromDecimal(decimalNumber);
 
 

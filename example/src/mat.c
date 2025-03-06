@@ -18,7 +18,7 @@
  */
 void printBinaryFromDecimal(int num)
 {
-    printf("Binary representation of %d: ", num);
+    printf("[printBinaryFromDecimal]:Binary representation of %d: ", num);
     for (int i = sizeof(num) * 8 - 1; i >= 0; i--)
     {
         printf("%d", (num >> i) & 1);
