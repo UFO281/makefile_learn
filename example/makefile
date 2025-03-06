@@ -9,6 +9,7 @@ INC_DIRS = inc
 
 # 自动发现所有的 .c 文件
 # 使用 wildcard 函数查找目录中的所有 .c 文件
+# 例如：app/main.c src/add.c src/main.c 省去手动操作
 obj = $(wildcard $(dir)/*.c)
 
 # 自动发现所有的 .c 文件并推导出对应的 .o 文件
@@ -16,7 +17,10 @@ obj = $(wildcard $(dir)/*.c)
 SRC_FILES = $(foreach dir, $(SRC_DIRS), $(obj))
 
 # 将源文件名转换为目标文件名
-# 使用 patsubst 函数将每个 .c 文件名转换为对应的 build 目录下的 .o 文件名
+# 将SRC_DIRS 目录下 app src的.c 名字转换为.o 名字,并在build目录下创建对应的目录
+# 例如：app/main.c -> build/app/main.o, src/add.c -> build/src/add.o
+# 使用模式替换将每个 .c 文件名转换为对应的 build 目录下的 .o 文件名
+# 例如：app/main.c -> build/app/main.o, src/add.c -> build/src/add.o
 OBJ_FILES = $(SRC_FILES:%.c=build/%.o)
 
 # 编译器和编译标志
@@ -49,7 +53,7 @@ build/%.o: %.c
 # 说明：删除所有生成的目标文件和可执行文件 test0
 clean:
 	@echo "Cleaning up..."
-	rm -rf build/*.o $(target)
+	rm -rf build $(target)
 
 # .PHONY 表示 clean 目标不对应实际文件，避免与文件名冲突
 .PHONY: all clean
