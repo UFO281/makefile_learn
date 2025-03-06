@@ -13,7 +13,7 @@ obj = $(wildcard $(dir)/*.c)
 
 # 自动发现所有的 .c 文件并推导出对应的 .o 文件
 # 使用 foreach 函数遍历 SRC_DIRS 中的每个目录，使用 wildcard 函数查找目录中的所有 .c 文件
-SRC_FILES = $(foreach dir, $(SRC_DIRS), $(wildcard $(dir)/*.c))
+SRC_FILES = $(foreach dir, $(SRC_DIRS), $(obj))
 
 # 将源文件名转换为目标文件名
 # 使用 patsubst 函数将每个 .c 文件名转换为对应的 build 目录下的 .o 文件名
