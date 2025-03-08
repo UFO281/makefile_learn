@@ -1,9 +1,6 @@
 # 导入顶层 配置文件config.mk, 进而可以使用其定义的变量，例如BUILD_DIR，CFLAGS
 include ../config.mk
 
-# 源代码目录
-SRC_DIR = /home/wls/git/makefile_learn_note/example/Driver/src
-
 
 # 获取 SRC_DIR 目录下所有的 .c 文件，赋值给变量 SRCS
 SRCS = $(wildcard $(SRC_DIR)/*.c)
