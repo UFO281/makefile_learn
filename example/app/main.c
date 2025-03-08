@@ -27,8 +27,8 @@ int main(void)
     printf("[main]:Hello, World!\n");
 
     printf("[main]:8+3=%d!\n",add(8,3));
-    printf("[main]:3*7=%d!\n",mul(7,3));
-    printf("[main]: 66 7-1=%d!\n",sub(7,1));
+    // printf("[main]:3*7=%d!\n",mul(7,3));
+    // printf("[main]: 66 7-1=%d!\n",sub(7,1));
 
 
 
