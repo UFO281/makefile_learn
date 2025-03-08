@@ -20,7 +20,7 @@ OBJS = $(SRCS:$(SRC_DIR)/%.c=$(BUILD_DIR)/%.o)
 all: $(OBJS)
 
 # 如果目录不存在就创建他
-$(shell mkdir -p $(BUILD_DIR))
+# $(shell mkdir -p $(BUILD_DIR))
 
 # 编译规则：将 .c 文件编译为 build 目录下的 .o 文件
 # $(BUILD_DIR)/%.o，BUILD_DIR变量下所有的.o文件,
