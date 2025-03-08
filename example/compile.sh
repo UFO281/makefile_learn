@@ -13,4 +13,7 @@ gcc -c -o build/main.o app/main.c -I ./Driver/inc
 # 将main.o 和其他几个.o,main函数里边调用到的 链接成可执行文件
 gcc -o bin/test build/mat.o build/main.o build/add.o
 
+# 将链接好的可执行文件，转变化成.bin文件
+objcopy -O binary bin/test bin/test.bin
+
 ./bin/test
