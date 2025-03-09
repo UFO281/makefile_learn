@@ -34,7 +34,7 @@ int main(void)
 
 
     int decimalNumber = 8;
-    printBinaryFromDecimal(decimalNumber);
+    // printBinaryFromDecimal(decimalNumber);
 
 
     return 0;

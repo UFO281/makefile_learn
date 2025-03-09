@@ -13,7 +13,7 @@
 #define MAT_H   
 
 
-void printBinaryFromDecimal(int num);
+
 float div_num(float a, float b);
 
 
