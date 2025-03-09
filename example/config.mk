@@ -1,17 +1,38 @@
 # 定义编译器
 CC = gcc
 
-# 项目路径
+# 项目路径(用户需要自动修改)
 PRO_DIR := /home/wls/git/makefile_learn_note/example
+
+# 静态库目录
+LIB_DIR_S := $(PRO_DIR)/lib/static
 
 # 源代码目录
 SRC_DIR = $(PRO_DIR)/Driver/src
 
+# 静态库头文件目录
+LIB_DIR_INC := $(PRO_DIR)/lib/inc
+
 # 头文件包含目录
-INC_DIR := $(PRO_DIR)/Driver/inc
+INC_DIR := $(PRO_DIR)/Driver/inc\
+		   $(LIB_DIR_INC) \
+
+# -I 自动添加头文件路径
+I_INC_DIR = $(foreach dir, $(INC_DIR), -I $(dir))
+
 
 # 编译生成目标文件目录
 BUILD_DIR := $(PRO_DIR)/build
+
+
+# := 赋值 只使用第一次定义的值
+BIN_DIR := $(PRO_DIR)/bin
+
+# 定义链接选项（链接器的参数）
+# 说明：-lBase_conversion：链接 libBase_conversion.a 静态库
+# -L$(LIB_DIR_S)：指定静态库目录
+LDFLAGS := -lBase_conversion \
+			-L$(LIB_DIR_S) 
 
 
 # 定义编译选项（C 编译器的参数）
@@ -28,16 +49,12 @@ BUILD_DIR := $(PRO_DIR)/build
 CFLAGS := -Wall \
          -Wextra \
          -O2 \
-         -I $(INC_DIR) \
+		 $(I_INC_DIR) \
          -fdiagnostics-color=always \
 		 -g \
 		 -std=c99 \
 		 -DDEBUG \
 		 -Werror \
 
-
-
-# := 赋值 只使用第一次定义的值
-BIN_DIR := $(PRO_DIR)/bin
 
 

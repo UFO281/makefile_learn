@@ -5,7 +5,7 @@ all: app driver link
 
 # 递归调用 app 目录的 makefile
 app:
-	$(MAKE) -C app
+	$(MAKE) -C app 
 	@echo "\n【11111】OB: $(OBJ)\n"
 
 # 递归调用 Driver 目录的 makefile
@@ -22,7 +22,7 @@ link:
 # 获取 build 目录下所有的 .o 文件
 	$(eval OBJ := $(wildcard $(BUILD_DIR)/*.o))
 	@echo "\n【4444】OB: $(OBJ)\n"
-	$(CC) -o $(BIN_DIR)/test1 $(OBJ)
+	$(CC) -o $(BIN_DIR)/test1 $(OBJ) $(LDFLAGS) $(CFLAGS)
 
 # 清理所有生成的文件
 clean:

@@ -14,7 +14,7 @@
 #include "add.h"
 #include "mul.h"
 #include "sub.h"
-
+#include "Base_conversion.h"
 
 
 /**
@@ -33,8 +33,8 @@ int main(void)
 
 
 
-    int decimalNumber = 8;
-    // printBinaryFromDecimal(decimalNumber);
+    int decimalNumber = 9;
+    printBinaryFromDecimal(decimalNumber);
 
 
     return 0;
