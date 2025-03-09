@@ -14,7 +14,7 @@ INC_DIR := $(PRO_DIR)/Driver/inc
 BUILD_DIR := $(PRO_DIR)/build
 
 # 定义编译选项
-CFLAGS := -Wall -Wextra -O2 -I $(INC_DIR)
+CFLAGS := -Wall -Wextra -O2 -I $(INC_DIR) -fdiagnostics-color=always
 
 # := 赋值 只使用第一次定义的值
 BIN_DIR := $(PRO_DIR)/bin
