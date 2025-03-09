@@ -2,7 +2,7 @@
 CC = gcc
 
 # 项目路径
-PRO_DIR := /home/wls/stm32/makefile_learn_note/example
+PRO_DIR := /home/wls/git/makefile_learn_note/example
 
 # 源代码目录
 SRC_DIR = $(PRO_DIR)/Driver/src
